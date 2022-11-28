@@ -192,3 +192,6 @@ ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 
 ln -s ~/.dotfiles/.config/alacritty ~/.config/alacritty
 
+ln -s ~/.dotfiles/.config/polybar ~/.config/polybar
+
+
