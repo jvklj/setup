@@ -48,12 +48,6 @@ sudo systemctl enable lightdm.service
 echo "Installing Xmonad Dependencies..."
 yay -S xmonad xmonad-contrib xmobar dmenu xterm --noconfirm
 
-echo "Installing Qtile Dependencies..."
-yay -S qtile --noconfirm
-
-echo "Installing awesome Dependencies..."
-yay -S awesome --noconfirm
-
 --------------------------------------------------------------
 --------------------------------------------------------------
 --------------------------------------------------------------
@@ -145,10 +139,6 @@ echo "Installing Dbeaver..."
 yay -S dbeaver --noconfirm
 clear
 
-echo "Installing PHPstorm..."
-yay -S phpstorm --noconfirm
-clear
-
 echo "Installing VSCode..."
 yay -S visual-studio-code-bin --noconfirm
 clear
@@ -171,7 +161,6 @@ clear
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-
 # Setting up the system
 
 cd ~ && git clone https://github.com/jvklj/dotfiles.git
@@ -181,17 +170,11 @@ mv dotfiles .dotfiles
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.bashrc ~/.bashrc
 ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
-
 ln -s ~/.dotfiles/.config/xmonad ~/.config/xmonad
 ln -s ~/.dotfiles/.config/xmobar ~/.config/xmobar
-ln -s ~/.dotfiles/.config/qtile ~/.config/qtile
-ln -s ~/.dotfiles/.config/awesome ~/.config/awesome
-
 ln -s ~/.dotfiles/.emacs.d ~/.emacs.d
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-
 ln -s ~/.dotfiles/.config/alacritty ~/.config/alacritty
 
-ln -s ~/.dotfiles/.config/polybar ~/.config/polybar
 
 
