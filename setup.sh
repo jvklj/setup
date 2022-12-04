@@ -82,7 +82,6 @@ echo "Installing Pyenv..."
 yay -S pyenv-virtualenv
 clear
 
-git push -u origin main
 echo "Install poetry..."
 curl -sSL https://install.python-poetry.org | python3 -
 #poetry config virtualenvs.in-project true
@@ -91,7 +90,7 @@ echo "Installing autoswitch plugin"
 cd ~ && git clone "https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git" "$ZSH_CUSTOM/plugins/autoswitch_virtualenv"
 
 echo "Installing PHP..."
-yay -S php php-apache php-gd php-intl php-mbstring php-mysqlnd php-pgsql php-sqlite php-xdebug php-xml php-yaml --noconfirm
+yay -S php php-apache php-gd php-intl php-pgsql php-sqlite php-yaml --noconfirm
 
 echo "Installing Composer..."
 yay -S composer --noconfirm
