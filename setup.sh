@@ -13,7 +13,21 @@ clear
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-# Desktop environment and window managers
+# Setting up the system
+
+cd ~ && git clone https://github.com/jvklj/dotfiles.git
+
+mv dotfiles .dotfiles
+
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.bashrc ~/.bashrc
+ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/.dotfiles/.config/xmonad ~/.config/xmonad
+ln -s ~/.dotfiles/.config/xmobar ~/.config/xmobar
+ln -s ~/.dotfiles/.emacs.d ~/.emacs.d
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.config/alacritty ~/.config/alacritty
+
 echo "Installing Xorg Dependencies..."
 yay -S xorg-server xorg-apps xorg-xinit xf86-video-intel --noconfirm
 yay -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
@@ -156,24 +170,7 @@ echo "Install Thunar..."
 yay -S thunar --noconfirm
 clear
 
---------------------------------------------------------------
---------------------------------------------------------------
---------------------------------------------------------------
 
-# Setting up the system
-
-cd ~ && git clone https://github.com/jvklj/dotfiles.git
-
-mv dotfiles .dotfiles
-
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/.config/xmonad ~/.config/xmonad
-ln -s ~/.dotfiles/.config/xmobar ~/.config/xmobar
-ln -s ~/.dotfiles/.emacs.d ~/.emacs.d
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/.config/alacritty ~/.config/alacritty
 
 
 
