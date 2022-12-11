@@ -107,7 +107,12 @@ echo "Installing PHP..."
 yay -S php php-apache php-gd php-intl php-pgsql php-sqlite php-yaml --noconfirm
 
 echo "Installing Composer..."
-yay -S composer --noconfirm
+cd ~ && mkdir .composer
+cd .composer
+curl -sS https://getcomposer.org/installer | php
+sudo pacman -S composer --noconfirm
+
+
 
 echo "Installing NodeJS..."
 yay -S nodejs npm --noconfirm
