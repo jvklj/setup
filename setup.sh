@@ -13,21 +13,6 @@ clear
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-# Setting up the system
-
-cd ~ && git clone https://github.com/jvklj/dotfiles.git
-
-mv dotfiles .dotfiles
-
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/.config/xmonad ~/.config/xmonad
-ln -s ~/.dotfiles/.config/xmobar ~/.config/xmobar
-ln -s ~/.dotfiles/.emacs.d ~/.emacs.d
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/.config/alacritty ~/.config/alacritty
-
 echo "Installing Xorg Dependencies..."
 yay -S xorg-server xorg-apps xorg-xinit xf86-video-intel --noconfirm
 yay -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
@@ -53,8 +38,12 @@ yay -S base-devel curl wget xclip openssh openssl gnome-keyring libsecret libgno
 clear
 
 echo "Installing fonts..."
+
 echo "Installing Fira Code..."
 yay -S ttf-fira-code --noconfirm
+
+echo "Installing Meslo Nerd Font..."
+yay -S ttf-meslo-nerd-font-powerlevel10k
 clear
 
 sudo systemctl enable lightdm.service
@@ -65,6 +54,9 @@ yay -S xmonad xmonad-contrib xmobar dmenu xterm --noconfirm
 --------------------------------------------------------------
 --------------------------------------------------------------
 --------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
 
 echo "Installing ZSH..."
 yay -S zsh --noconfirm
@@ -72,8 +64,9 @@ yay -S zsh --noconfirm
 echo "Installing Oh my ZSH..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-echo "Installing starship"
-yay -S starship --noconfirm
+echo "Installing powerlevel10k..."
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -175,7 +168,26 @@ echo "Install Thunar..."
 yay -S thunar --noconfirm
 clear
 
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
 
+# Setting up the system
 
+cd ~ && git clone https://github.com/jvklj/dotfiles.git
+
+mv dotfiles .dotfiles
+
+ln -sf ~/.dotfiles/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+ln -sf ~/.dotfiles/.bash_profile ~/.bash_profile
+ln -sf ~/.dotfiles/.config/xmonad ~/.config/xmonad
+ln -sf ~/.dotfiles/.config/xmobar ~/.config/xmobar
+ln -sf ~/.dotfiles/.emacs.d ~/.emacs.d
+ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/.config/alacritty ~/.config/alacritty
 
 
