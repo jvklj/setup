@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-sudo pacman -Syu
+sudo pacman -S git --noconfirm
 
 echo "Installing YAY..."
 cd ~ && git clone https://aur.archlinux.org/yay.git
@@ -27,9 +27,9 @@ sudo systemctl disable dhcpcd.service
 sudo systemctl enable wpa_supplicant.service
 sudo systemctl start NetworkManager.service
 
-
 echo "Installing bluetooth..."
-yay -S bluez bluez-utils pulseaudio-bluetooth --noconfirm
+yay -S bluez bluez-utils blueman pulseaudio-bluetooth --noconfirm
+sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
 clear
 
@@ -67,10 +67,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Installing powerlevel10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
 
 echo "Installing Docker..."
 yay -S docker --noconfirm
@@ -105,22 +103,11 @@ cd .composer
 curl -sS https://getcomposer.org/installer | php
 sudo pacman -S composer --noconfirm
 
-
-
 echo "Installing NodeJS..."
 yay -S nodejs npm --noconfirm
 
 echo "Installing NVM..."
 yay -S nvm --noconfirm
-
-echo "Installing Elixir..."
-yay -S elixir --noconfirm
-
-echo "Installing Erlang..."
-yay -S erlang --noconfirm
-
-echo "Installing asdf..."
-yay -S asdf-vm --noconfirm
 
 echo "installing alacritty"
 yay -S alacritty --noconfirm
@@ -136,10 +123,6 @@ clear
 
 echo "Installing VLC..."
 yay -S vlc --noconfirm
-clear
-
-echo "Installing Spotify..."
-yay -S spotify --noconfirm
 clear
 
 echo "Installing Telegram..."
@@ -168,6 +151,11 @@ echo "Install Thunar..."
 yay -S thunar --noconfirm
 clear
 
+echo "Install Google Chrome..."
+yay -S google-chrome --noconfirm
+clear
+
+
 --------------------------------------------------------------
 --------------------------------------------------------------
 --------------------------------------------------------------
@@ -189,5 +177,3 @@ ln -sf ~/.dotfiles/.config/xmobar ~/.config/xmobar
 ln -sf ~/.dotfiles/.emacs.d ~/.emacs.d
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/.config/alacritty ~/.config/alacritty
-
-
