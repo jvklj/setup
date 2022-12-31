@@ -17,6 +17,7 @@ echo "Installing Xorg Dependencies..."
 yay -S xorg-server xorg-apps xorg-xinit xf86-video-intel --noconfirm
 yay -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm
 lightdm --test-mode --debug
+sudo systemctl enable lightdm.service
 
 echo "Installing Network Manager..."
 yay -S wpa_supplicant wireless_tools networkmanager modemmanager mobile-broadband-provider-info usb_modeswitch --noconfirm
@@ -37,19 +38,18 @@ echo "Installing development base"
 yay -S base-devel curl wget xclip openssh openssl gnome-keyring libsecret libgnome-keyring zlib xz --noconfirm 
 clear
 
-echo "Installing fonts..."
-
 echo "Installing Fira Code..."
 yay -S ttf-fira-code --noconfirm
 
-echo "Installing Meslo Nerd Font..."
-yay -S ttf-meslo-nerd-font-powerlevel10k
-clear
-
-sudo systemctl enable lightdm.service
 
 echo "Installing Xmonad Dependencies..."
 yay -S xmonad xmonad-contrib xmobar dmenu xterm --noconfirm
+
+echo "Installing Qtile Dependencies..."
+yay -S qtile --noconfirm
+
+echo "Installing AwesomeWM Dependencies..."
+yay -S awesome --noconfirm
 
 --------------------------------------------------------------
 --------------------------------------------------------------
@@ -64,8 +64,6 @@ yay -S zsh --noconfirm
 echo "Installing Oh my ZSH..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-echo "Installing powerlevel10k..."
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -125,12 +123,20 @@ echo "Installing VLC..."
 yay -S vlc --noconfirm
 clear
 
+echo "Installing Spotify..."
+yay -S spotify --noconfirm
+clear
+
 echo "Installing Telegram..."
 yay -S telegram-desktop --noconfirm
 clear
 
 echo "Installing Dbeaver..."
 yay -S dbeaver --noconfirm
+clear
+
+echo "Installing PHPStorm..."
+yay -S phpstorm --noconfirm
 clear
 
 echo "Installing VSCode..."
@@ -174,6 +180,7 @@ ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 ln -sf ~/.dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/.dotfiles/.config/xmonad ~/.config/xmonad
 ln -sf ~/.dotfiles/.config/xmobar ~/.config/xmobar
+ln -sf ~/.dotfiles/.config/qtile ~/.config/qtile
 ln -sf ~/.dotfiles/.emacs.d ~/.emacs.d
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/.config/alacritty ~/.config/alacritty

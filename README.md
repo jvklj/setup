@@ -21,9 +21,11 @@ This is my setup script, feel free to use.
 - Discord
 - VLC
 - Spotify
+- Google Chrome
 - Telegram Desktop
 - Dbeaver
 - PhpStorm
+- Postman
 - Visual Studio Code
 - Neovim
 - Emacs
