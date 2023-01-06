@@ -30,4 +30,4 @@ This is my setup script, feel free to use.
 - Neovim
 - Emacs
 - Thunar
-- [My dotfiles](https://github.com/jvklj/dotfiles)
+- [My dotfiles](https://github.com/jvsvazz/dotfiles)
