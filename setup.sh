@@ -93,7 +93,7 @@ echo "Installing autoswitch plugin"
 cd ~ && git clone "https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git" "$ZSH_CUSTOM/plugins/autoswitch_virtualenv"
 
 echo "Installing PHP..."
-yay -S php php-apache php-gd php-intl php-pgsql php-sqlite php-yaml --noconfirm
+yay -S php
 
 echo "Installing Composer..."
 cd ~ && mkdir .composer
@@ -146,15 +146,12 @@ clear
 echo "Installing Postman..."
 yay -S postman-bin --noconfirm
 
-echo "Installing Neovim..."
-yay -S neovim --noconfirm
-
 echo "Installing emacs..."
 yay -S emacs --noconfirm
 clear
 
-echo "Install Thunar..."
-yay -S thunar --noconfirm
+echo "Installing nnn"
+yay -S nnn --noconfirm
 clear
 
 echo "Install Google Chrome..."
